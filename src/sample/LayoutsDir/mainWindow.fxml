@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="mainWindow" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllersDir.MainWindowController">
+   <center>
+      <Pane prefHeight="296.0" prefWidth="267.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <children>
+            <VBox alignment="CENTER" layoutX="182.0" layoutY="128.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="240.0" prefWidth="226.0" spacing="10.0">
+               <children>
+                  <Button fx:id="openDoorsBtn" focusTraversable="false" mnemonicParsing="false" onAction="#openDoors" prefHeight="40.0" prefWidth="180.0" text="Open doors">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Button>
+                  <Button fx:id="settingsBtn" focusTraversable="false" mnemonicParsing="false" onAction="#showOtherWindow" prefHeight="40.0" prefWidth="180.0" text="Settings">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Button>
+                  <Button fx:id="diodeBtn" focusTraversable="false" mnemonicParsing="false" onAction="#onDiodeMenuButtonClick" prefHeight="40.0" prefWidth="180.0" text="Diode">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Button>
+                  <Separator prefWidth="200.0" />
+                  <Button fx:id="connectionTest" focusTraversable="false" mnemonicParsing="false" onAction="#tryConnection" prefHeight="40.0" prefWidth="180.0" text="Check Connection">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Button>
+               </children>
+            </VBox>
+            <Pane fx:id="diodeColorPane" focusTraversable="true" layoutX="402.0" layoutY="75.0" prefHeight="317.0" prefWidth="198.0" visible="false">
+               <children>
+                  <Label layoutX="18.0" layoutY="14.0" text="Pick RGB diode color">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <ToggleButton fx:id="setColorRedBtn" layoutX="54.0" layoutY="50.0" mnemonicParsing="false" onAction="#updateDiodeColor" prefHeight="25.0" prefWidth="75.0" text="Red">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="diodeColor" />
+                     </toggleGroup>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </ToggleButton>
+                  <ToggleButton fx:id="setColorGreenBtn" focusTraversable="false" layoutX="54.0" layoutY="80.0" mnemonicParsing="false" onAction="#updateDiodeColor" prefHeight="25.0" prefWidth="75.0" text="Green" toggleGroup="$diodeColor">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </ToggleButton>
+                  <ToggleButton fx:id="setColorBlueBtn" focusTraversable="false" layoutX="54.0" layoutY="110.0" mnemonicParsing="false" onAction="#updateDiodeColor" prefHeight="25.0" prefWidth="75.0" text="Blue" toggleGroup="$diodeColor">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </ToggleButton>
+                  <Circle fx:id="currentDiodeColorCircle" fill="WHITE" layoutX="67.0" layoutY="284.0" radius="12.0" stroke="#fff9f9" strokeType="INSIDE" />
+                  <Label layoutX="34.0" layoutY="255.0" text="RGB Color:  " />
+                  <Separator layoutX="10.0" layoutY="10.0" orientation="VERTICAL" prefHeight="290.0" />
+                  <Separator layoutX="170.0" layoutY="10.0" orientation="VERTICAL" prefHeight="290.0" />
+                  <Separator layoutX="12.0" layoutY="300.0" prefHeight="2.0" prefWidth="160.0" />
+                  <Separator layoutX="12.0" layoutY="10.0" prefHeight="2.0" prefWidth="160.0" />
+                  <ToggleButton fx:id="setColorCyanBtn" layoutX="54.0" layoutY="140.0" mnemonicParsing="false" onAction="#updateDiodeColor" prefHeight="25.0" prefWidth="75.0" text="Cyan" toggleGroup="$diodeColor">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </ToggleButton>
+                  <ToggleButton fx:id="setColorMagentaBtn" layoutX="55.0" layoutY="170.0" mnemonicParsing="false" onAction="#updateDiodeColor" prefHeight="25.0" prefWidth="75.0" text="Magenta" toggleGroup="$diodeColor">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </ToggleButton>
+                  <ToggleButton fx:id="setColorYellowBtn" layoutX="54.0" layoutY="200.0" mnemonicParsing="false" onAction="#updateDiodeColor" prefHeight="25.0" prefWidth="75.0" text="Yellow" toggleGroup="$diodeColor">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </ToggleButton>
+                  <ToggleButton fx:id="setColorWhiteBtn" layoutX="55.0" layoutY="230.0" mnemonicParsing="false" onAction="#updateDiodeColor" prefHeight="25.0" prefWidth="75.0" text="White" toggleGroup="$diodeColor">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </ToggleButton>
+                  <Button layoutX="91.0" layoutY="277.0" mnemonicParsing="false" onAction="#TurnOffDiode" text="TURN OFF">
+                     <font>
+                        <Font name="Andre V" size="8.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="currentColorLabel" layoutX="97.0" layoutY="255.0" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Pane>
+         </children>
+      </Pane>
+   </center>
+   <bottom>
+      <TextArea editable="false" prefHeight="37.0" prefWidth="752.0" text="Please, before any operation check your connection with firebase database" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="285.0" right="285.0" />
+         </BorderPane.margin>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </TextArea>
+   </bottom>
+   <top>
+      <Pane prefHeight="67.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="95.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to the Doorlock control app" wrappingWidth="809.1199951171875">
+               <font>
+                  <Font name="Andre V" size="48.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </top>
+   <right>
+      <Pane fx:id="shortcutsPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextArea fx:id="shortcutsTextArea" editable="false" layoutY="126.0" prefHeight="245.0" prefWidth="194.0">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font></TextArea>
+            <Label layoutX="3.0" layoutY="99.0" text="Currently used shortcuts">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </right>
+   <left>
+      <Pane fx:id="togglesPane" prefHeight="495.0" prefWidth="186.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutX="22.0" layoutY="157.0" prefHeight="60.0" prefWidth="141.0">
+               <children>
+                  <Label layoutX="-2.0" layoutY="4.0" text="Work in background">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                  </Label>
+                  <ToggleButton fx:id="toggleWorkInBackground" layoutX="71.0" layoutY="28.0" mnemonicParsing="false" onAction="#toggleWorkInBackground" prefHeight="25.0" prefWidth="25.0" />
+                  <Slider fx:id="workInBackgroundSlider" layoutX="14.0" layoutY="33.0" max="1.0" mouseTransparent="true" prefHeight="14.0" prefWidth="47.0" />
+               </children>
+            </Pane>
+            <Pane layoutX="23.0" layoutY="219.0" prefHeight="60.0" prefWidth="141.0">
+               <children>
+                  <Label layoutX="-2.0" layoutY="4.0" text="Block RFID">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                  </Label>
+                  <ToggleButton fx:id="toggleRfid" layoutX="71.0" layoutY="28.0" mnemonicParsing="false" onAction="#toggleRfid" prefHeight="25.0" prefWidth="25.0" />
+                  <Slider fx:id="sliderRfid" layoutX="14.0" layoutY="33.0" max="1.0" mouseTransparent="true" prefHeight="14.0" prefWidth="47.0" />
+               </children>
+            </Pane>
+            <Pane layoutX="24.0" layoutY="279.0" prefHeight="60.0" prefWidth="140.0">
+               <children>
+                  <Label layoutX="-1.0" layoutY="4.0" text="Shortcuts">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                  </Label>
+                  <ToggleButton fx:id="toggleShortcuts" layoutX="71.0" layoutY="28.0" mnemonicParsing="false" onAction="#turnOnShortcuts" prefHeight="25.0" prefWidth="25.0" />
+                  <Slider fx:id="shortcutsSlider" layoutX="14.0" layoutY="33.0" max="1.0" mouseTransparent="true" prefHeight="14.0" prefWidth="47.0" />
+               </children>
+            </Pane>
+            <Separator layoutX="23.0" layoutY="215.0" prefHeight="4.0" prefWidth="140.0" />
+            <Separator layoutX="24.0" layoutY="277.0" prefHeight="4.0" prefWidth="140.0" />
+         </children>
+      </Pane>
+   </left>
+</BorderPane>

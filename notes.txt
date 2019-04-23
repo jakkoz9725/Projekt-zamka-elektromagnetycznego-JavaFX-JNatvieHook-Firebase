@@ -1,0 +1,5 @@
+[openByApp] = K1
+[cardsBlocked] = undefined
+[colorRed] = undefined
+[colorBlue] = undefined
+[colorGreen] = undefined
