@@ -1,6 +1,8 @@
 # Zamek-elektromagnetyczny-JavaFX-Control-App-Part2
 Aplikacja okienkowa JavaFX 
 
+- Możliwość zmiany koloru diody RGB przy czytniku kart zbliżeniowych
+
 ![javafxApp1st](https://user-images.githubusercontent.com/35427912/56543152-e852e500-6570-11e9-84de-ab5f25c5fd1a.jpg)
 
 - Możliwość zapisywania skrótów klawiszowych, które zostają zapisane w pliku tekstowym
